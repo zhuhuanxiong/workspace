@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../JQuery3.5.1.js"></script>
+  <script type="text/javascript">
+    function chk() {
+      //当选中input为4时，其他选项清除选中并锁定，取消4选定，锁定解除 
+      if ($("#fr").prop("checked") == true) {
+        $("input[type='checkbox']").prop("checked", false);
+        $("input[type='checkbox']").prop("disabled", true);
+        $("#fr").prop("checked", true);
+        $("#fr").prop("disabled", false);
+      } else {
+        $("input[type='checkbox']").prop("disabled", false);
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" name="text" value="00" />0
+  <input type="checkbox" name="text" value="01" />1
+  <input type="checkbox" name="text" value="02" />2
+  <input type="checkbox" name="text" value="03" />3
+  <input type="checkbox" name="text" value="04" id="fr" onclick="chk()" />4
+</body>
+
+</html>
